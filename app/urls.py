@@ -9,7 +9,7 @@ from reviews.views import ReviewCreateListView, ReviewRetrieveUpdateDestroyView
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('api/v1/', include('genre.urls')),
+    path('api/v1/', include('genres.urls')),
     
     path('actors/', ActorCreateListView.as_view(), name='actor-create-list'),
     path('actors/<int>:pk/', ActorRetrieveUpdateDestroyView.as_view(), name='actor-detail-view'),
