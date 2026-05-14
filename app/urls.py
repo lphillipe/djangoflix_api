@@ -1,9 +1,5 @@
 from django.contrib import admin
 from django.urls import path, include
-from genres.views import GenreCreateListView, GenreRetrieveUpdateDestroyView
-from actors.views import ActorCreateListView, ActorRetrieveUpdateDestroyView
-from movies.views import MovieCreateListView, MovieRetrieveUpdateDestroyView
-from reviews.views import ReviewCreateListView, ReviewRetrieveUpdateDestroyView
 
 
 urlpatterns = [
