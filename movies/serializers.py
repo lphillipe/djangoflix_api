@@ -10,6 +10,7 @@ class MovieModelSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_rate(self, obj):
+        reviews = obj.reviews.all()
         return 5
 
     def validate_release_date(self, value):
