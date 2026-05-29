@@ -35,6 +35,4 @@ class MovieStatsView(views.APIView):
                 'movies_by_genre': movies_by_genre,
                 'total_reviews': total_reviews,
                 'average_stars': average_stars,
-            },
-            status=status.HTTP_200_OK,
-        )
+            }, status=status.HTTP_200_OK)
