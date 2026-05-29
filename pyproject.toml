@@ -16,3 +16,19 @@ dependencies = [
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "ruff (>=0.15.15,<0.16.0)"
+]
+
+[tool.ruff]
+# Define o tamanho máximo de linha recomendado pela PEP 8 (ou use 88 do Black)
+line-length = 79
+
+[tool.ruff.lint]
+# "E" e "W" ativam todas as regras de estilo e avisos da PEP 8
+select = ["E", "W", "F", "I"]
+# Regras específicas que você queira ignorar (opcional)
+ignore = []
+
