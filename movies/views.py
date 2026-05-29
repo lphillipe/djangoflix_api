@@ -31,8 +31,8 @@ class MovieStatsView(views.APIView):
         average_stars = Review.objects.aggregate(avg_stars=Avg('stars'))['avg_stars']
         
         return response.Response(data={
-                'total_movies': total_movies,
-                'movies_by_genre': movies_by_genre,
-                'total_reviews': total_reviews,
-                'average_stars': average_stars,
-            }, status=status.HTTP_200_OK)
+            'total_movies': total_movies,
+            'movies_by_genre': movies_by_genre,
+            'total_reviews': total_reviews,
+            'average_stars': average_stars,
+        }, status=status.HTTP_200_OK)
