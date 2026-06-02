@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from app.permissions import GlobalDefaultPermission
 from movies.models import Movie
-from movies.serializers import MovieModelSerializer, MovieStatsSerializer
+from movies.serializers import MovieModelSerializer, MovieListDetailSerializer, MovieStatsSerializer
 from reviews.models import Review
 
 
@@ -14,7 +14,11 @@ class MovieCreateListView(generics.ListCreateAPIView):
         GlobalDefaultPermission,
     )
     queryset = Movie.objects.all()
-    serializer_class = MovieModelSerializer
+    
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return MovieListDetailSerializer
+        return MovieModelSerializer
 
 
 class MovieRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
