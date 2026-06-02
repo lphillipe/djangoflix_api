@@ -15,7 +15,7 @@ class MovieCreateListView(generics.ListCreateAPIView):
     )
     queryset = Movie.objects.all()
     
-    def get_serializer_class(self):
+    def get_serializer_class(self):  # type: ignore[override]
         if self.request.method == 'GET':
             return MovieListDetailSerializer
         return MovieModelSerializer
