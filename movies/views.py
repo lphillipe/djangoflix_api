@@ -27,7 +27,11 @@ class MovieRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
         GlobalDefaultPermission,
     )
     queryset = Movie.objects.all()
-    serializer_class = MovieModelSerializer
+    
+    def get_serializer_class(self):  # type: ignore[override]
+        if self.request.method == 'GET':
+            return MovieListDetailSerializer
+        return MovieModelSerializer
 
 
 class MovieStatsView(views.APIView):
