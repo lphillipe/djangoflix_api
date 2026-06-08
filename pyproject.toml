@@ -1,5 +1,5 @@
 [project]
-name = "djangoflix-api"
+name = "djangoflix_api"
 version = "0.1.0"
 description = ""
 authors = [
